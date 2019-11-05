@@ -56,7 +56,6 @@ class QuayStatus extends Component {
       </Aux>
     );
   }
-  
 }
 
 export default QuayStatus;
