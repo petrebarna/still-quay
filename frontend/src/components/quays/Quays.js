@@ -34,7 +34,7 @@ class Quays extends Component {
   }
 
   toggleQuays = () => this.setState({quaysVisible: !this.state.quaysVisible});
-
+  
   render() {
     let checkQuays = null;
     if(this.state.quaysVisible){
