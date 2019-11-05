@@ -1,7 +1,17 @@
-const http = require('http');
+const express = require('express');
 
-const routes = require('./routes');
+const bodyParser = require('body-parser');
 
-const server = http.createServer(routes);
+require('dotenv').config();
 
-server.listen(3000);
+const app = express();
+const port = process.env.PORT || 5000;
+
+app.use('/', (req, res, next) =>{
+  console.log("In middleware");
+  res.send('<h1>Hello from Express!!!</h1>')
+})
+
+app.listen(port, () => {
+  console.log("Server is running on port: ${port}");
+}
