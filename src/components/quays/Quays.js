@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-import Quay from './Quay';
+import Button from '@material-ui/core/Button';
+
 import Aux from '../../hoc/Aux';
+import AllQuays from './AllQuays';
 
 
 class Quays extends Component {
@@ -34,13 +36,19 @@ class Quays extends Component {
   toggleQuays = () => this.setState({quaysVisible: !this.state.quaysVisible});
 
   render() {
+    let checkQuays = null;
+    if(this.state.quaysVisible){
+      checkQuays = <AllQuays quays={this.state.quays} />  
+    }
 
     return(
       <Aux>
-        <button
+        <Button
+          variant="contained"
+          color="primary"
           onClick={this.toggleQuays}>
-          Show Available Quays</button>
-        {}
+          Show Available Quays</Button>
+          {checkQuays}
       </Aux>
     )
   }

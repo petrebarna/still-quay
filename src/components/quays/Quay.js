@@ -1,19 +1,25 @@
 import React from 'react';
+import Box from '@material-ui/core/Box';
 
 const quay = (props) => {
   return(
     <div>
-      <head>
-        <h2>
-          Quay name: {props.quayName};
-        </h2>
-      </head>
       <body>
-        <h3>
-          Quay wall info: {props.quayInfo};
-        </h3>
+        <Box m={2}>       
+         <h2>
+            Quay name: {props.name};
+          </h2>
+        </Box>
+
         <p>
-          Location: ---add location on Google Maps---
+        <Box m={4}> 
+            <strong>Quay wall info:</strong> {props.info}
+          </Box>
+        </p>
+        <p>
+          <Box m={4}> 
+            <strong>Location:</strong> {props.location}
+          </Box>
         </p>
       </body>
     </div>
