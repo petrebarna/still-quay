@@ -10,7 +10,6 @@ const quay = (props) => {
             Quay name: {props.name};
           </h2>
         </Box>
-
         <p>
         <Box m={4}> 
             <strong>Quay wall info:</strong> {props.info}

@@ -16,6 +16,7 @@ class QuayStatus extends Component {
       dangerousTides: false,
       dangerousWeather: false,
       assessForDays: [],
+      
 
     }
   }
@@ -52,6 +53,7 @@ class QuayStatus extends Component {
       <Aux>
         <h1>
           The quay wall is currently {quayStatus}.
+          
         </h1>
       </Aux>
     );
