@@ -1,0 +1,24 @@
+Service for monitoring quay walls for possible movements. 
+Helps local authorities and public living nearby.
+
+Database - SQL contains:
+  collection of quays
+  tidal data for each quay
+  earthquake data for each quay
+  General risk category for the quay
+  users
+
+Allows users to create an account
+
+Use google maps API to locate you against the closest quays (use a radius)
+
+Use SEPA and EA APIs to query data
+
+Query other APIs for quay wall descriptions
+
+Query Google News API for news about the wall
+
+Send alert emails
+
+Allow a donation for supporting the website
+  
