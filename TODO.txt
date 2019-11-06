@@ -3,3 +3,7 @@ Condition the tide endpoints on a single quay.
 
 
 ---frontend---
+
+Finish the components. which are state components ?
+
+Link them to the backend

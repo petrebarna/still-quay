@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -18,18 +19,20 @@ import TidesForPeriod from './components/TidesForPeriod';
 function App() {
   return (
     <Router>
-      <Navbar />
-      <br />
-      <Route path='/' exact component={Home} />
-      <Route path='/user/create' component={CreateUser} />
-      <Route path='/status/:id' component={QuayStatus} /> 
-      <Route path='/quays' exact component={QuayList} />
-      <Route path='/quays/:id' exact component={Quay} />
-      <Route path='/quays/add' component={AddQuay} />
-      <Route path='/quays/:id/edit' component={EditQuay} />
-      <Route path='/quays/:id/delete' component={DeleteQuay} />
-      <Route path='/quays/:id/tides' component={AllTimeTides} />
-      <Route path='/quays/:id/tides/:period' component={TidesForPeriod} />
+      <div className="container">
+        <Navbar />
+        <br />
+        <Route path='/' exact component={Home} />
+        <Route path='/user/create' component={CreateUser} />
+        <Route path='/status/:id' component={QuayStatus} /> 
+        <Route path='/quays' exact component={QuayList} />
+        <Route path='/quays/:id' exact component={Quay} />
+        <Route path='/quays/add' component={AddQuay} />
+        <Route path='/quays/:id/edit' component={EditQuay} />
+        <Route path='/quays/:id/delete' component={DeleteQuay} />
+        <Route path='/quays/:id/tides' component={AllTimeTides} />
+        <Route path='/quays/:id/tides/:period' component={TidesForPeriod} />
+      </div>
     </Router>
   )
 }
