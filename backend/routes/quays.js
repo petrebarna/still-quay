@@ -21,7 +21,7 @@ router.route('/add').post((req, res) => {
 });
 
 router.route('/:id').get((req, res) => {
-  Quay.findById(req,params.id)
+  Quay.findById(req.params.id)
     .then(quay => res.json(quay))
     .catch(err => res.status(400).json('Error: ' + err));
 });
