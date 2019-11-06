@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 
 const tideSchema = new Schema({
   date: {
-    type: date,
+    type: Date,
     required: true, 
     unique: true },
   level: {
-    type: double
+    type: Double
   }
 }, {
   timestamps: true,
