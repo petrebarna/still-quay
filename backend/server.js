@@ -28,4 +28,4 @@ app.use('/quays/tides', tidesRouter); //this route should be for only one quay
 
 app.listen(port, () => {
   console.log('Server is running on port:' +  port);
-})
+});

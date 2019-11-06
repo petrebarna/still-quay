@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Aux from '../../hoc/Aux';
-import Quay from './Quay';
+import Quay from '../Quay';
 
 const allQuays = (props) => (
   <Aux>
