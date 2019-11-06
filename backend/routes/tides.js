@@ -9,3 +9,5 @@ router.route('/').get((req, res) => {
 })
 
 // Add functionality to update database from SEPA
+
+module.exports = router;

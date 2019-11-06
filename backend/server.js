@@ -21,9 +21,10 @@ connection.once('open', () => {
 app.use(cors());
 app.use(express.json());
 
+app.use('/users', usersRouter);
 app.use('/quays', quaysRouter);
 app.use('/quays/tides', tidesRouter); //this route should be for only one quay
-app.use('/users', usersRouter);
+
 
 app.listen(port, () => {
   console.log('Server is running on port:' +  port);

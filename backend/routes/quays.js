@@ -20,4 +20,30 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/:id').get((req, res) => {
+  Quay.findById(req,params.id)
+    .then(quay => res.json(quay))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/:id').delete((req, res) => {
+  Quay.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Quay entry deleted"))
+    .catch(err => res.status(400).json("Error: " + err));
+});
+
+router.route('/:id').post((req, res) => {
+  Quay.findByIdAndUpdate(req.params.id)
+    .then(quay => {
+      quay.quayname = req.body.quayname;
+      quay.description = req.body.description;
+      quay.location = req.body.location;
+
+      quay.save()
+        .then(() => res.json("Quay updated!"))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json("Error: " + err));
+});
+
 module.exports = router;

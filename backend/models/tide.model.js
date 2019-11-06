@@ -8,7 +8,7 @@ const tideSchema = new Schema({
     required: true, 
     unique: true },
   level: {
-    type: Double
+    type: Number
   }
 }, {
   timestamps: true,

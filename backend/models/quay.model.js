@@ -19,6 +19,6 @@ const quaySchema = new Schema({
   timestamps: true,
 });
 
-const Quay = mongoose.model('Quay', exerciseSchema);
+const Quay = mongoose.model('Quay', quaySchema);
 
 module.exports = Quay;
