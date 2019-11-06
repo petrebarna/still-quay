@@ -21,4 +21,5 @@ const quaySchema = new Schema({
 
 const Quay = mongoose.model('Quay', quaySchema);
 
+
 module.exports = Quay;
