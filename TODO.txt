@@ -1,9 +1,21 @@
 ---backend---
-Condition the tide endpoints on a single quay.
+Tide entry to the database - each quay records daily four readings L, H, L, H
+
+Input rules for 
+
 
 
 ---frontend---
 
-Finish the components. which are state components ?
+When adding a quay wall offer options of construction(gabion, sheet-piles), age, retaining height, embedment depth.
 
-Link them to the backend
+Calculate a min and a max allowable based on inputs above
+
+Status is processed based on min and max against the four tides each day. Calculate in FE or BE?
+
+Tides component.
+
+Location - pull api from Google Maps
+
+
+
