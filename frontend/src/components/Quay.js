@@ -2,9 +2,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-const quay = props => {
+const Quay = props => {
   return(
-    <div>
       <tr>
         <td>{props.quay.quayname}</td>
         <td>{props.quay.info}</td>
@@ -15,10 +14,9 @@ const quay = props => {
         <td>
           <Link to={"/quays/edit/" + props.quay._id}>edit</Link> | 
           <Link to={"/quays/follow/" + props.quay._id}>follow</Link>
-        </td>
+        </td> 
       </tr>
-    </div>
   )
 }
 
-export default quay;
+export default Quay;

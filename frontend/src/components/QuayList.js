@@ -11,19 +11,27 @@ class QuayList extends Component {
 
     this.quayList = this.quayList.bind(this);
 
-    this.state = { quayList: [] };
+    this.state = { quayList: [
+      {
+        quayname: "quay test 1",
+        info: "testing quay 1",
+        location: "right here",
+        _id: 1
+      }
+    ] };
   }
 
   componentDidMount() {
     axios.get('http://localhost:5000/quays/')
       .then(response => {
         this.setState({ quayList: response.data })
+        console.log(this.state.quayList)
       })
       .catch(err => console.log(err));
     }
 
   quayList() {
-    this.state.quayList.map(quay => {
+    return this.state.quayList.map(quay => {
       return <Quay quay={quay} key={quay._id} />
     })
   }
@@ -35,15 +43,15 @@ class QuayList extends Component {
       <div>
         <h3>All Quays We Currently Monitor</h3>
         <table className="table">
-          <tbody>
-            <tr className="thread-light">
+          <thead className="thead-light">
+            <tr>
                 <th>Quay Name</th>
                 <th>Info Report</th>
                 <th>Location</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
-          </tbody>
+            </thead>
           <tbody>
             { this.quayList() }
           </tbody>
