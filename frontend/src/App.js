@@ -13,6 +13,7 @@ import Quay from './components/Quay';
 import EditQuay from './components/EditQuay';
 import AllTimeTides from './components/AllTimeTides';
 import TidesForPeriod from './components/TidesForPeriod';
+import Follow from './components/Follow';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/quays/:id' component={Quay} />
         <Route path='/quays/add' component={AddQuay} />
         <Route path='/quays/edit/:id' component={EditQuay} />
+        <Route path='/quays/follow/:id' component={Follow} />
         <Route path='/quays/tides/:id' exact component={AllTimeTides} />
         <Route path='/quays/tides/:id/:period' component={TidesForPeriod} />
       </div>

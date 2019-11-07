@@ -35,15 +35,15 @@ class QuayList extends Component {
       <div>
         <h3>All Quays We Currently Monitor</h3>
         <table className="table">
-          <thread className="thread-light">
-            <tr>
-              <th>Quay Name</th>
-              <th>Info Report</th>
-              <th>Location</th>
-              <th>Status</th>
-              <th>Actions</th>
+          <tbody>
+            <tr className="thread-light">
+                <th>Quay Name</th>
+                <th>Info Report</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
-          </thread>
+          </tbody>
           <tbody>
             { this.quayList() }
           </tbody>
