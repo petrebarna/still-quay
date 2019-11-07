@@ -36,7 +36,7 @@ router.route('/update/:id').post((req, res) => {
   Quay.findByIdAndUpdate(req.params.id)
     .then(quay => {
       quay.quayname = req.body.quayname;
-      quay.description = req.body.description;
+      quay.info = req.body.info;
       quay.location = req.body.location;
 
       quay.save()

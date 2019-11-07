@@ -15,7 +15,7 @@ class Navbar extends Component {
           <Link to="/quays" className="navbar-item">Quays</Link>
           </li>
           <li className="navbar-item px-2">
-          <Link to="/quays/add" className="navbar-item">Add a Quay</Link>
+          <Link to="/quays/add" className="navbar-item">Add Quay</Link>
           </li>
         </ul>
       </nav>

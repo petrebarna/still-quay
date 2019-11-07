@@ -12,7 +12,8 @@ const Quay = props => {
         <td>{props.quay.info}</td>
         <td>{props.quay.location}</td>
         <td>
-          <Link to={"/quays/follow/" + props.quay._id}>Follow</Link>
+          <Link to={"/quays/follow/" + props.quay._id}>Follow</Link> {"/ "}
+          <Link to={'/quays/edit/' + props.quay._id}>Edit</Link>
         </td> 
       </tr>
   )

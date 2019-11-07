@@ -8,6 +8,7 @@ class QuayEntry extends Component {
     super(props);
 
     this.state = {
+      id:'',
       quayname: '',
       info: '',
       location: '',
@@ -20,6 +21,7 @@ class QuayEntry extends Component {
     axios.get('http://localhost:5000/quays/' + this.props.match.params.id)
       .then(response => {
         this.setState({
+          id: response.data._id,
           quayname: response.data.quayname,
           info: response.data.info,
           location: response.data.location

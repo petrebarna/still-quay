@@ -5,11 +5,6 @@ class EditQuay extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeQuayname = this.onChangeQuayname.bind(this);
-    this.onChangeInfo = this.onChangeInfo.bind(this);
-    this.onChangeLocation = this.onChangeLocation.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-
     this.state = {
       quayname: '',
       info: '',
@@ -17,21 +12,21 @@ class EditQuay extends Component {
     }
   }
 
-  onChangeQuayname = e => {
-    this.setState({
-      username: e.target.value
-    })
+  componentDidMount() {
+    axios.get('http://localhost:5000/quays/' + this.props.match.params.id)
+      .then(response => {
+        this.setState({
+          quayname: response.data.quayname,
+          info: response.data.info,
+          location: response.data.location
+        })
+      })
+      .catch(err => console.log(err));
   }
 
   onChangeInfo = e => {
     this.setState({
       info: e.target.value
-    })
-  }
-
-  onChangeLocation = e => {
-    this.setState({
-      location: e.target.value
     })
   }
 
@@ -47,37 +42,31 @@ class EditQuay extends Component {
     console.log(quay);
 
     axios.post('http://localhost:5000/quays/update/' + this.props.match.params.id, quay)
-      .then(res => console.log(res.data))
+      .then(response => console.log(response.data))
       .catch(err => console.log(err));
 
-    window.location = '/quays'
+    alert("Changes Sent");
   }
 
 
   render() {
     return (
       <div>
-        <h3>Edit Quay</h3>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Quay Name: </label>
-            <select ref="userInput"
-              required
-              className="form-control"
-              value={this.state.quayname}
-              onChange={this.onChangeQuayname}>
-                {
-                  this.state.quays.map(quay => {
-                    return <option
-                      key={quay}
-                      value={quay}>{quay}
-                      </option>
-                  })
-                }
-              </select>
-          </div>
-        </form>
-      </div>
+      <h3>Editing</h3>
+      <form onSubmit={this.onSubmit}>
+        <div className="form-group"> 
+          <label>Quay Info </label>
+          <input  
+            type="text"
+            required
+            className="form-control"
+            onChange={this.onChangeInfo} />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Submit" className="btn btn-primary" />
+        </div>
+      </form>
+    </div>
     )
   }
 }
