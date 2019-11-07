@@ -25,6 +25,7 @@ class QuayEntry extends Component {
           location: response.data.location
         })
       })
+      .catch(err => console.log(err));
     
     axios.get()
   }

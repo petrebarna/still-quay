@@ -1,7 +1,7 @@
 ---backend---
 Tide entry to the database - each quay records daily four readings L, H, L, H
 
-Input rules for 
+Verify the tides route in Server.js
 
 
 
