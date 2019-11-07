@@ -1,7 +1,7 @@
 ---backend---
-Tide entry to the database - each quay records daily four readings L, H, L, H
+Tide are not used in the back end atm. For each quay a station id is recorded which maps to a station on Admiralty API.
+This can be used to query their API for daily tides.
 
-Verify the tides route in Server.js
 
 
 
@@ -16,8 +16,11 @@ Status is processed based on min and max against the four tides each day. Calcul
 Tides component.
 
 Location - pull api from Google Maps
+Location of station? based on coordinates from Admiralty
 
 Why do I get extra stuff in AddQuay page???? Routing issue probably.
+
+Plot a sinusoidal graph based on the four tides
 
 
 

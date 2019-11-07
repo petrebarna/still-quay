@@ -24,7 +24,7 @@ function App() {
         <br />
         <Route path='/' exact component={Home} />
         <Route path='/user/account' component={Account} />
-        <Route path='/quays/:id/status' exact component={QuayStatus} /> 
+        <Route path='/status/:id/' exact component={QuayStatus} /> 
         <Route path='/quays' exact component={QuayList} />
         <Route path='/quays/:id' exact component={QuayEntry} />
         <Route path='/quays/add' component={AddQuay} />

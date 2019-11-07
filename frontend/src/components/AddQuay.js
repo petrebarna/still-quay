@@ -9,7 +9,8 @@ class AddQuay extends Component {
     this.state = {
       quayname: '',
       info: '',
-      location: ''
+      location: '',
+      stationId: ''
     }
   }
 
@@ -31,13 +32,20 @@ class AddQuay extends Component {
     })
   }
 
+  onChangeStationId = (e) => {
+    this.setState({
+      stationId: e.target.value
+    })
+  }
+
   onSubmit = (e) => {
     e.preventDefault();
 
     const quay = {
       quayname: this.state.quayname,
       info: this.state.info,
-      location: this.state.location
+      location: this.state.location,
+      stationId: this.state.stationId
     }
 
     axios.post('http://localhost:5000/quays/add', quay)
@@ -76,9 +84,16 @@ class AddQuay extends Component {
               onChange={this.onChangeLocation}
               />
         </div>
-
+        <div className="form-group"> 
+          <label>Station Id </label>
+          <input  type="text"
+              required
+              className="form-control"
+              onChange={this.onChangeStationId}
+              />
+        </div>
         <div className="form-group">
-          <input type="submit" value="Add Quay" className="btn btn-primary" />
+          <input type="submit" value="Submit" className="btn btn-primary" />
         </div>
       </form>
     </div>
