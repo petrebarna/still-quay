@@ -46,7 +46,7 @@ class QuayEntry extends Component {
             </tr>
             <tr>
               <td>
-                <Link to={'/status/' + this.state.id}>View Status</Link>
+                <Link to={'/status/' + this.state.id}>View Status and Tides</Link>
               </td>
             </tr>
             <tr>

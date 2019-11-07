@@ -44,7 +44,7 @@ class QuayList extends Component {
                 <th>Quay</th>
                 <th>Info Report</th>
                 <th>Location</th>
-                <th>Actions</th>
+                <th></th>
             </tr>
             </thead>
           <tbody>

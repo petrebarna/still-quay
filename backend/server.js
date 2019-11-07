@@ -23,7 +23,7 @@ app.use(express.json());
 
 app.use('/users', usersRouter);
 app.use('/quays', quaysRouter);
-app.use('/quays/tides', tidesRouter); //this route should be for only one quay
+app.use('/tides', tidesRouter);
 
 
 app.listen(port, () => {

@@ -12,8 +12,9 @@ router.route('/add').post((req, res) => {
   const quayname = req.body.quayname;
   const info = req.body.info;
   const location = req.body.location;
+  const stationId = req.body.stationId;
 
-  const newQuay = new Quay({quayname, info, location});
+  const newQuay = new Quay({quayname, info, location, stationId});
 
   newQuay.save()
     .then(() => res.json("Quay added!"))

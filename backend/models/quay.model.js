@@ -14,6 +14,9 @@ const quaySchema = new Schema({
   location: {
     type: String, 
     required: true
+  },
+  stationId: {
+    type: String
   }
 }, {
   timestamps: true,
