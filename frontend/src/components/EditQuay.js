@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component} from 'react';
 
-const EditQuay = (props) => {
-  return(
-    <h3>Inside the EditQuay component</h3>
-  )
+class EditQuay extends Component {
+  render() {
+    return (
+      console.log("Hola!")
+    )
+  }
 }
-
 export default EditQuay;

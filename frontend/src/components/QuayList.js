@@ -1,55 +1,54 @@
 import React, { Component } from 'react';
 
-import Button from '@material-ui/core/Button';
-
-import Aux from '../hoc/Aux';
-import AllQuays from './quays/AllQuays';
+import axios from 'axios';
+import Quay from './Quay';
 
 
 class QuayList extends Component {
+
   constructor(props) {
     super(props);
 
-    this.toggleQuays = this.toggleQuays.bind(this);
+    this.quayList = this.quayList.bind(this);
 
-
-    this.state = {
-      quays: [
-        {
-          id: 1,
-          name: "Buchanan Wharf",
-          location: "Glasgow City Center",
-          info: "This quay wall was built by Clyde Co. in 1805."
-        },
-        {
-          id: 2,
-          name: "Bowling Marina",
-          location: "Bowling - Clyde",
-          info: "This quay wall was built by Esso in 1850."
-        }
-      ],
-      quaysVisible: false,
-
-    }
+    this.state = { quayList: [] };
   }
 
-  toggleQuays = () => this.setState({quaysVisible: !this.state.quaysVisible});
-  
-  render() {
-    let checkQuays = null;
-    if(this.state.quaysVisible){
-      checkQuays = <AllQuays quays={this.state.quays} />  
+  componentDidMount() {
+    axios.get('http://localhost:5000/quays/')
+      .then(response => {
+        this.setState({ quayList: response.data })
+      })
+      .catch(err => console.log(err));
     }
 
+  quayList() {
+    this.state.quayList.map(quay => {
+      return <Quay quay={quay} key={quay._id} />
+    })
+  }
+
+
+  render() {
+
     return(
-      <Aux>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={this.toggleQuays}>
-          Show Available Quays</Button>
-          {checkQuays}
-      </Aux>
+      <div>
+        <h3>All Quays We Currently Monitor</h3>
+        <table className="table">
+          <thread className="thread-light">
+            <tr>
+              <th>Quay Name</th>
+              <th>Info Report</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thread>
+          <tbody>
+            { this.quayList() }
+          </tbody>
+        </table>
+      </div>
     )
   }
 }
