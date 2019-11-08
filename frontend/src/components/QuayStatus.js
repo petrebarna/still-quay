@@ -20,12 +20,14 @@ class QuayStatus extends Component {
 
   // the tides are requested from here, but are pulled from admiralty from the BE and returned here.
   componentDidMount() {
-    console.log(this.state.stationId);
     axios.get('http://localhost:5000/quays/' + this.props.match.params.id)
     .then(response => {
-      this.setState({stationId: response.data.stationId})
-      console.log(this.state.stationId);
-    })
+      this.setState({stationId: response.data.stationId});
+      axios.get('http://localhost:5000/tides/' + this.state.stationId)
+        .then(response => {
+        this.setState({tides: response.data})})
+      .catch(err => console.log(err))}
+      )
     .catch(err => console.log(err))
   }
   
@@ -39,25 +41,14 @@ class QuayStatus extends Component {
     }
   }
 
-  onClick = (e) => {
-    e.preventDefault();
-    console.log(this.state.stationId);
-    axios.get('http://localhost:5000/tides/' + this.state.stationId)
-      .then(response => this.setState({tides: response}))
-      .catch(err => console.log(err));
-  }
 
-  
+
   render() {
-
 
     return(
       <div>
-        <button onClick={this.onClick}>
-          Show Tides
-        </button>
         <p>
-          These are the tides {this.state.tides.map(t => console.log(t))}
+          These are the tides {this.tides}
         </p>
         <p>
           The {this.state.quayname} quay is currently {this.status()}
