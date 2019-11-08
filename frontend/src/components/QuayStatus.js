@@ -16,8 +16,8 @@ class QuayStatus extends Component {
     }
   }
 
-  // the tides are requested from here, but are pulled from admiralty from the BE and returned here.
   componentDidMount() {
+    const heights = [];
     axios.get('http://localhost:5000/quays/' + this.props.match.params.id)
     .then(response => {
       this.setState({
@@ -26,7 +26,9 @@ class QuayStatus extends Component {
       });
       axios.get('http://localhost:5000/tides/' + this.state.stationId)
         .then(response => {
-        this.setState({tides: response.data})})
+          response.data.map(tide => 
+            heights.push(Math.round((tide.Height * 100)) / 100))
+        this.setState({tides: heights})})
       .catch(err => console.log(err))}
       )
     .catch(err => console.log(err))
@@ -42,13 +44,9 @@ class QuayStatus extends Component {
     }
   }
 
-  tides = () => {
-    const heights = [];
-    this.state.tides.map(tide => 
-      heights.push(Math.round((tide.Height * 100)) / 100)
-    )
-    return heights.join();
-  }
+
+
+
 
   render() {
 
@@ -56,7 +54,7 @@ class QuayStatus extends Component {
       <div>
         <h3>{this.state.quayname}</h3>
         <p>
-          Tides {this.tides()}
+          Tides {this.state.tides.join()}
         </p>
         <p>
           The {this.state.quayname} quay is currently {this.status()}
