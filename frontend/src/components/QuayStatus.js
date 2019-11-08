@@ -13,6 +13,11 @@ class QuayStatus extends Component {
       tides:[],
       stationCoordinates: '',
       stationName:'',
+      heightAboveBed: null,
+      wallType: 'sheet piled',
+      embedmentDepth: null,
+      lowestTide: null,
+      wallFactor: 1,
     }
   }
 
@@ -23,24 +28,54 @@ class QuayStatus extends Component {
       this.setState({
         stationId: response.data.stationId,
         quayname: response.data.quayname,
+        wallType: response.data.wallType,
+        embedmentDepth: response.data.embedmentDepth,
+        heightAboveBed: response.data.heightAboveBed
       });
       axios.get('http://localhost:5000/tides/' + this.state.stationId)
         .then(response => {
           response.data.map(tide => 
             heights.push(Math.round((tide.Height * 100)) / 100))
-        this.setState({tides: heights})})
+        this.setState({tides: heights})
+        this.findLowestTide();
+        this.status();
+      })
       .catch(err => console.log(err))}
       )
     .catch(err => console.log(err))
   }
   
-  
 
+  findLowestTide = () => this.setState({ lowestTide: Math.min(...this.state.tides)});
+
+  
+  // Formula for safety check
   status = () => {
-    if(this.state.safeToday) {
-      return "SAFE"
+    switch(this.state.wallType){
+      case "counterfort":
+        this.setState({ wallFactor: 1.2});
+        break;
+      case "sheet piled":
+        this.setState({ wallFactor: 1.1});
+        break;
+      case "combi-wall":
+        this.setState({ wallFactor: 1.25});
+        break;
+      default:
+        this.setState({ wallFactor: 1});
+    }    
+    const term1 = this.state.heightAboveBed / this.state.lowestTide;
+    const term2 = this.state.heightAboveBed * this.state.wallFactor / this.state.embedmentDepth;
+    if(term1 > term2) {
+      this.setState({ safeToday: false })
+    }
+  }
+
+  displayStatus = () => {
+    if(this.state.safeToday){
+      return "SAFE";
     } else {
-      return "IN DANGER!"
+      return "IN DANGER!";
     }
   }
 
@@ -68,7 +103,10 @@ class QuayStatus extends Component {
           Tides {this.state.tides.join()}
         </p>
         <p>
-          The {this.state.quayname} quay is currently {this.status()}
+          Lowest tide is {this.state.lowestTide}
+        </p>
+        <p>
+          The {this.state.quayname} quay is currently {this.displayStatus()}
         </p>
       </div>
 
