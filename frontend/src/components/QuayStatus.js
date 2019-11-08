@@ -44,7 +44,18 @@ class QuayStatus extends Component {
     }
   }
 
-
+  // prepTides = () => {
+  //   const stringTides = this.state.tides.join();
+  //   let preparedTides = '';
+  //   for(let c in stringTides.length){
+  //     if(stringTides.charAt(c) === ','){
+  //       preparedTides =+ ' _, ';
+  //     } else {
+  //       preparedTides =+ c;
+  //     }
+  //   }
+  //   return preparedTides;
+  // }
 
 
 

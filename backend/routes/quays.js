@@ -12,9 +12,13 @@ router.route('/add').post((req, res) => {
   const quayname = req.body.quayname;
   const info = req.body.info;
   const location = req.body.location;
+  const heightAboveBed = req.body.heightAboveBed;
+  const embedmentDepth = req.body.embedmentDepth;
+  const wallType = req.body.wallType;
   const stationId = req.body.stationId;
 
-  const newQuay = new Quay({quayname, info, location, stationId});
+
+  const newQuay = new Quay({quayname, info, location, heightAboveBed, embedmentDepth, wallType, stationId});
 
   newQuay.save()
     .then(() => res.json("Quay added!"))
@@ -39,6 +43,10 @@ router.route('/update/:id').post((req, res) => {
       quay.quayname = req.body.quayname;
       quay.info = req.body.info;
       quay.location = req.body.location;
+      quay.embedmentDepth = req.body.embedmentDepth;
+      quay.heightAboveBed = req.body.heightAboveBed;
+      quay.wallType = req.body.wallType;
+      quay.stationId = req.body.stationId;
 
       quay.save()
         .then(() => res.json("Quay updated!"))

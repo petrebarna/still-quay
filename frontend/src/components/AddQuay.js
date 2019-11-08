@@ -10,7 +10,11 @@ class AddQuay extends Component {
       quayname: '',
       info: '',
       location: '',
-      stationId: ''
+      stationId: '',
+      wallType: '',
+      embedmentDepth: null,
+      heightAboveBed: null,
+
     }
   }
 
@@ -35,6 +39,24 @@ class AddQuay extends Component {
   onChangeStationId = (e) => {
     this.setState({
       stationId: e.target.value
+    })
+  }
+
+  onChangeWallType = (e) => {
+    this.setState({
+      wallType: e.target.value
+    })
+  }
+
+  onChangeEmbedmentDepth = (e) => {
+    this.setState({
+      embedmentDepth: e.target.value
+    })
+  }
+
+  onChangeHeightAboveBed = (e) => {
+    this.setState({
+      heightAboveBed: e.target.value
     })
   }
 
@@ -71,7 +93,6 @@ class AddQuay extends Component {
         <div className="form-group"> 
           <label>Info </label>
           <input  type="text"
-              required
               className="form-control"
               onChange={this.onChangeInfo}
               />
@@ -85,7 +106,31 @@ class AddQuay extends Component {
               />
         </div>
         <div className="form-group"> 
-          <label>Station Id </label>
+          <label>Height of Wall Above Bed Level</label>
+          <input  type="text"
+              required
+              className="form-control"
+              onChange={this.onChangeHeightAboveBed}
+              />
+        </div>
+        <div className="form-group"> 
+          <label>Embedment Depth</label>
+          <input  type="text"
+              required
+              className="form-control"
+              onChange={this.onChangeEmbedmentDepth}
+              />
+        </div>
+        <div className="form-group"> 
+          <label>Wall Type: [Choose from: counterfort, sheet piled and combi-wall] </label>
+          <input  type="text"
+              required
+              className="form-control"
+              onChange={this.onChangeWallType}
+              />
+        </div>
+        <div className="form-group"> 
+          <label>Station Id [Temporary: choose a value from these ones: 0040, 0045, 0453, 0462] </label>
           <input  type="text"
               required
               className="form-control"

@@ -15,6 +15,15 @@ const quaySchema = new Schema({
     type: String, 
     required: true
   },
+  wallType: {
+    type: String
+  },
+  heightAboveBed: {
+    type: Number
+  },
+  embedmentDepth: {
+    type: Number
+  },
   stationId: {
     type: String
   }
