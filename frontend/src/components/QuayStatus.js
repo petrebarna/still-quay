@@ -8,13 +8,11 @@ class QuayStatus extends Component {
 
     this.state = {
       quayname: '',
-      location: '',
       stationId: '',
       safeToday: true,
       tides:[],
       stationCoordinates: '',
       stationName:'',
-      stationCountry: ''
     }
   }
 
@@ -22,7 +20,10 @@ class QuayStatus extends Component {
   componentDidMount() {
     axios.get('http://localhost:5000/quays/' + this.props.match.params.id)
     .then(response => {
-      this.setState({stationId: response.data.stationId});
+      this.setState({
+        stationId: response.data.stationId,
+        quayname: response.data.quayname,
+      });
       axios.get('http://localhost:5000/tides/' + this.state.stationId)
         .then(response => {
         this.setState({tides: response.data})})
@@ -53,6 +54,7 @@ class QuayStatus extends Component {
 
     return(
       <div>
+        <h3>{this.state.quayname}</h3>
         <p>
           Tides {this.tides()}
         </p>
