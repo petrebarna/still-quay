@@ -3,22 +3,15 @@
 
 ---frontend---
 
-Formula for SAFE: 
-  heightAboveBed / lowestTide < heightAboveBed * wallFactor / embedmentDepth
 
-  When adding a quay wall offer options of construction(gabion, sheet-piles), age, retaining height, embedment depth.
-  Calculate a min and a max allowable based on inputs above
-
-Status is processed based on min and max against the four tides each day.
-
-Tides component.
+BUG - in the AddQuay component - wallType, embedmentDepth and heightAboveBed are not recorded from the forms.
 
 Location - pull api from Google Maps
 Location of station? based on coordinates from Admiralty
 
 Why do I get extra stuff in AddQuay page???? Routing issue probably.
 
-Plot a sinusoidal graph based on the four tides
+Plot a sinusoidal graph based on the four tides - required?
 
 
 

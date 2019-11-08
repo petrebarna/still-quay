@@ -14,7 +14,6 @@ class AddQuay extends Component {
       wallType: '',
       embedmentDepth: null,
       heightAboveBed: null,
-
     }
   }
 
@@ -107,7 +106,7 @@ class AddQuay extends Component {
         </div>
         <div className="form-group"> 
           <label>Height of Wall Above Bed Level</label>
-          <input  type="text"
+          <input  type="number"
               required
               className="form-control"
               onChange={this.onChangeHeightAboveBed}
@@ -115,7 +114,7 @@ class AddQuay extends Component {
         </div>
         <div className="form-group"> 
           <label>Embedment Depth</label>
-          <input  type="text"
+          <input  type="number"
               required
               className="form-control"
               onChange={this.onChangeEmbedmentDepth}
