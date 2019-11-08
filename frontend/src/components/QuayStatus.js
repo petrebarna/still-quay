@@ -18,20 +18,15 @@ class QuayStatus extends Component {
     }
   }
 
+  // the tides are requested from here, but are pulled from admiralty from the BE and returned here.
   componentDidMount() {
+    console.log(this.state.stationId);
     axios.get('http://localhost:5000/quays/' + this.props.match.params.id)
     .then(response => {
-      this.setState({
-        quayname: response.data.quayname,
-        location: response.data.location,
-        stationId: response.data.stationId});
-        axios.get('https://admiraltyapi.azure-api.net/uktidalapi/api/V1/Stations/' + this.state.stationId, 
-        {'headers': {'Ocp-Apim-Subscription-Key': 'e177b65b644243f8868cd930727a86a9'}})
-        .then(response => console.log(response.data))
-        .catch(err => console.log(err));
-      })
+      this.setState({stationId: response.data.stationId})
+      console.log(this.state.stationId);
+    })
     .catch(err => console.log(err))
-
   }
   
   
@@ -44,13 +39,31 @@ class QuayStatus extends Component {
     }
   }
 
+  onClick = (e) => {
+    e.preventDefault();
+    console.log(this.state.stationId);
+    axios.get('http://localhost:5000/tides/' + this.state.stationId)
+      .then(response => this.setState({tides: response}))
+      .catch(err => console.log(err));
+  }
+
+  
   render() {
 
 
     return(
-      <p>
-        The {this.state.quayname} quay is currently {this.status()}
-      </p>
+      <div>
+        <button onClick={this.onClick}>
+          Show Tides
+        </button>
+        <p>
+          These are the tides {this.state.tides.map(t => console.log(t))}
+        </p>
+        <p>
+          The {this.state.quayname} quay is currently {this.status()}
+        </p>
+      </div>
+
     );
   }
 }

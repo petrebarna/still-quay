@@ -3,12 +3,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const tideSchema = new Schema({
+  quayId:{
+    type: String
+  },
   date: {
     type: Date,
     required: true, 
     unique: true },
-  level: {
-    type: Number
+  levels: {
+    type: String
   }
 }, {
   timestamps: true,

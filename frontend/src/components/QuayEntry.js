@@ -12,8 +12,7 @@ class QuayEntry extends Component {
       quayname: '',
       info: '',
       location: '',
-      safeToday: true,
-      tidalData:[]
+      stationId: ''
     }
   }
 
@@ -24,10 +23,11 @@ class QuayEntry extends Component {
           id: response.data._id,
           quayname: response.data.quayname,
           info: response.data.info,
-          location: response.data.location
+          location: response.data.location,
+          stationId: response.data.stationId
         })
       })
-      .catch(err => console.log(err));    
+      .catch(err => console.log(err));  
   }
 
   render(){

@@ -10,7 +10,7 @@ import QuayStatus from './components/QuayStatus';
 import QuayList from './components/QuayList';
 import AddQuay from './components/AddQuay';
 import EditQuay from './components/EditQuay';
-import AllTimeTides from './components/AllTimeTides';
+import Tides from './components/Tides';
 import TidesForPeriod from './components/TidesForPeriod';
 import Follow from './components/Follow';
 import QuayEntry from './components/QuayEntry';
@@ -30,7 +30,7 @@ function App() {
         <Route path='/quays/add' component={AddQuay} />
         <Route path='/quays/edit/:id' component={EditQuay} />
         <Route path='/quays/follow/:id' component={Follow} />
-        <Route path='/quays/tides/:id' exact component={AllTimeTides} />
+        <Route path='/tides/:stationId' component={Tides} />
         <Route path='/quays/tides/:id/:period' component={TidesForPeriod} />
       </div>
     </Router>
