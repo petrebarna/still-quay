@@ -8,7 +8,11 @@ class EditQuay extends Component {
     this.state = {
       quayname: '',
       info: '',
-      location: ''
+      location: '',
+      stationId: '',
+      wallType: '',
+      embedmentDepth: null,
+      heightAboveBed: null
     }
   }
 
@@ -18,7 +22,11 @@ class EditQuay extends Component {
         this.setState({
           quayname: response.data.quayname,
           info: response.data.info,
-          location: response.data.location
+          location: response.data.location,
+          stationId: response.data.stationId,
+          wallType: response.data.wallType,
+          embedmentDepth: response.data.embedmentDepth,
+          heightAboveBed: response.data.heightAboveBed
         })
       })
       .catch(err => console.log(err));
@@ -36,7 +44,11 @@ class EditQuay extends Component {
     const quay = {
       quayname: this.state.quayname,
       info: this.state.info,
-      location: this.state.location
+      location: this.state.location,
+      stationId: this.state.stationId,
+      wallType: this.state.wallType,
+      embedmentDepth: this.state.embedmentDepth,
+      heightAboveBed: this.state.heightAboveBed
     }
 
     console.log(quay);
