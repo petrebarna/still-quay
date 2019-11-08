@@ -41,14 +41,20 @@ class QuayStatus extends Component {
     }
   }
 
-
+  tides = () => {
+    const heights = [];
+    this.state.tides.map(tide => 
+      heights.push(tide.Height)
+    )
+    return heights.join();
+  }
 
   render() {
 
     return(
       <div>
         <p>
-          These are the tides {this.tides}
+          These are the tides {this.tides()}
         </p>
         <p>
           The {this.state.quayname} quay is currently {this.status()}
