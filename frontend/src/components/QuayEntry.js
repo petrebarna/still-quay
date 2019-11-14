@@ -43,7 +43,25 @@ class QuayEntry extends Component {
         <table className="table">
           <tbody>
             <tr>
+              <td><strong>Info</strong></td>
+            </tr>
+            <tr>
               <td>{this.state.info}</td>
+            </tr>
+            <tr>
+              <td><strong>Wall Properties</strong></td>
+            </tr>
+            <tr>
+              <td>Wall Type: {this.state.wallType}</td>
+            </tr>
+            <tr>
+              <td>Height of Wall Above Bed: {this.state.heightAboveBed} m</td>
+            </tr>
+            <tr>
+              <td>Embedment of Wall: {this.state.embedmentDepth} m</td>
+            </tr>
+            <tr>
+              <td><strong>Wall Location</strong></td>
             </tr>
             <tr>
               <td>{this.state.location}</td>

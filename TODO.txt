@@ -10,8 +10,6 @@ Importance Scale:
 ---frontend---
   
   BUGS:
-3 -- heightAboveBed causes "TypeError: Cannot read property 'heightAboveBed' of undefined".
-
 2 -- Why do I get extra stuff in AddQuay page???? Routing issue probably.
 
 1 -- Show the wallType, embedmentDepth and heightAboveBed in each Quay.
