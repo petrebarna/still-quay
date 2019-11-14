@@ -11,7 +11,10 @@ Importance Scale:
   
   BUGS:
 3 -- in the AddQuay component - wallType, embedmentDepth and heightAboveBed are not recorded from the forms.
+
 2 -- Why do I get extra stuff in AddQuay page???? Routing issue probably.
+
+1 -- Show the wallType, embedmentDepth and heightAboveBed in each Quay.
 
 
   IMPROVEMENTS:

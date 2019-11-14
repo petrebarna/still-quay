@@ -66,13 +66,15 @@ class AddQuay extends Component {
       quayname: this.state.quayname,
       info: this.state.info,
       location: this.state.location,
-      stationId: this.state.stationId
+      stationId: this.state.stationId,
+      wallType: this.state.wallType,
+      embedmentDepth: this.state.embedmentDepth,
+      heightAboveBed: this.state.heightAboveBed
     }
 
     axios.post('http://localhost:5000/quays/add', quay)
       .then(response => alert(response.data))
       .catch(err => console.log(err));
-    
     
   }
 
