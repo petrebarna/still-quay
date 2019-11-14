@@ -1,7 +1,7 @@
 Importance Scale:
   1 - Critical
   2 - Major
-  3 - Minor#
+  3 - Minor
 
 
 ---backend---
@@ -10,7 +10,7 @@ Importance Scale:
 ---frontend---
   
   BUGS:
-3 -- in the AddQuay component - wallType, embedmentDepth and heightAboveBed are not recorded from the forms.
+3 -- heightAboveBed causes "TypeError: Cannot read property 'heightAboveBed' of undefined".
 
 2 -- Why do I get extra stuff in AddQuay page???? Routing issue probably.
 

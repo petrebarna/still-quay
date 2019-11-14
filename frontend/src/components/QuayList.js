@@ -9,14 +9,7 @@ class QuayList extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { quayList: [
-      {
-        quayname: "quay test 1",
-        info: "testing quay 1",
-        location: "right here",
-        _id: 1
-      }
-    ] };
+    this.state = { quayList: [] };
   }
 
   componentDidMount() {

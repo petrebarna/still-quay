@@ -12,7 +12,10 @@ class QuayEntry extends Component {
       quayname: '',
       info: '',
       location: '',
-      stationId: ''
+      stationId: '',
+      wallType: '',
+      heightAboveBed: null,
+      embedmentDepth: null,
     }
   }
 
@@ -24,7 +27,10 @@ class QuayEntry extends Component {
           quayname: response.data.quayname,
           info: response.data.info,
           location: response.data.location,
-          stationId: response.data.stationId
+          stationId: response.data.stationId,
+          wallType: response.data.wallType,
+          embedmentDepth: response.data.embedmentDepth,
+          heightAboveBed: response.data.heightAboveBed
         })
       })
       .catch(err => console.log(err));  
@@ -56,7 +62,6 @@ class QuayEntry extends Component {
         </table>
       </div>
     )
-
   }
 }
 
