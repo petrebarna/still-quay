@@ -1,17 +1,36 @@
+Importance Scale:
+  1 - Critical
+  2 - Major
+  3 - Minor#
+
+
 ---backend---
 
 
 ---frontend---
+  
+  BUGS:
+3 -- in the AddQuay component - wallType, embedmentDepth and heightAboveBed are not recorded from the forms.
+2 -- Why do I get extra stuff in AddQuay page???? Routing issue probably.
 
 
-BUG - in the AddQuay component - wallType, embedmentDepth and heightAboveBed are not recorded from the forms.
+  IMPROVEMENTS:
+
+Home Page
+
+Account
 
 Location - pull api from Google Maps
+
 Location of station? based on coordinates from Admiralty
 
-Why do I get extra stuff in AddQuay page???? Routing issue probably.
-
 Plot a sinusoidal graph based on the four tides - required?
+
+
+
+
+
+
 
 
 
