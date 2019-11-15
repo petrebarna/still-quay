@@ -17,7 +17,7 @@ Automate API Tests in Postman
 
   IMPROVEMENTS:
 
-Home Page
+Home Page - Description of app
 
 Account
 

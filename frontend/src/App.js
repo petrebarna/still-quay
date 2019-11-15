@@ -21,12 +21,12 @@ import Background from './images/breakwater.jpg';
 
 
 let Imgstyle = {
-  backgroundSize: "contain",
+  backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  width: "100%",
-  height: "100vh",
-
-  backgroundImage: `url(${Background})`
+  minWidth: "88%",
+  minHeight: "100vh",
+  float: "left",
+  backgroundImage: `url(${Background})`,
 }
 
 function App() {
