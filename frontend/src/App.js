@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Account from './components/Account';
@@ -16,19 +17,30 @@ import TidesForPeriod from './components/TidesForPeriod';
 import Follow from './components/Follow';
 import QuayEntry from './components/QuayEntry';
 
+import Background from './images/breakwater.jpg';
+
+
+let Imgstyle = {
+  backgroundSize: "contain",
+  backgroundRepeat: "no-repeat",
+  width: "100%",
+  height: "100vh",
+
+  backgroundImage: `url(${Background})`
+}
 
 function App() {
   return (
     <Router>
-      <div className="container">
+      <div className="container" style={ Imgstyle } >
         <Navbar />
         <br />
         <Route path='/' exact component={Home} />
         <Route path='/user/account' component={Account} />
-        <Route path='/status/:id/' exact component={QuayStatus} /> 
-        <Route path='/quays' exact component={QuayList} />
-        <Route path='/quays/:id' exact component={QuayEntry} />
         <Route path='/quays/add' component={AddQuay} />
+        <Route path='/quays/:id' component={QuayEntry} />
+        <Route path='/quays' exact component={QuayList} />
+        <Route path='/status/:id/' exact component={QuayStatus} /> 
         <Route path='/quays/edit/:id' component={EditQuay} />
         <Route path='/quays/follow/:id' component={Follow} />
         <Route path='/tides/:stationId' component={Tides} />

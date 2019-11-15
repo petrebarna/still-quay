@@ -6,13 +6,13 @@ Importance Scale:
 
 ---backend---
 
+Automate API Tests in Postman
 
 ---frontend---
   
   BUGS:
-2 -- Why do I get extra stuff in AddQuay page???? Routing issue probably.
+1 -- Why do I get extra stuff in AddQuay page???? Routing issue probably.
 
-1 -- Show the wallType, embedmentDepth and heightAboveBed in each Quay.
 
 
   IMPROVEMENTS:
@@ -21,11 +21,15 @@ Home Page
 
 Account
 
-Location - pull api from Google Maps
+Location - Google maps API is not free; Try maybe a free option?
 
 Location of station? based on coordinates from Admiralty
 
 Plot a sinusoidal graph based on the four tides - required?
+
+Links to types-of Walls
+
+
 
 
 
