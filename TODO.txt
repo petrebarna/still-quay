@@ -6,18 +6,50 @@ Importance Scale:
 
 ---backend---
 
-Automate API Tests in Postman
+3. Think of a way to record the stations.
+
+3. Query a weather api and process it
+
+
 
 ---frontend---
   
   BUGS:
-1 -- Why do I get extra stuff in AddQuay page???? Routing issue probably.
 
+2.  Why do I get extra stuff in AddQuay page???? Routing issue probably.
+
+3. Redirect to Quays page after Adding a Quays
+
+3. Redirect to the specific Quay page after Editing a Quay
+
+3. Make buttons white
+
+2. Link follow to the account.
+
+3. Drop-down list for statons
+
+3. Drop-down list for wall types
+
+3. Fit the background to the whole image
+
+3. Is the design dynamic?
+
+3. instead of coordinates show city/town and country
+
+3. clean-up components files
+
+3. How to ref photos on websites?
+
+3. Move Status & Tides straight in Quay Entry
+
+3. Add spaces between tides 
+
+3. Style the Safe in green and Danger in red 
 
 
   IMPROVEMENTS:
 
-Home Page - Description of app
+Home Page - Description of app, formula reasons etc
 
 Account
 
@@ -28,6 +60,13 @@ Location of station? based on coordinates from Admiralty
 Plot a sinusoidal graph based on the four tides - required?
 
 Links to types-of Walls
+
+Link the wall type of each quay to the description
+
+Deploy the website
+
+Automate API Tests in Postman
+
 
 
 
