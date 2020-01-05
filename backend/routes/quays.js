@@ -2,12 +2,14 @@ const router = require('express').Router();
 
 let Quay = require('../models/quay.model');
 
+// get all routes
 router.route('/').get((req, res) => {
   Quay.find()
     .then(quays => res.json(quays))
     .catch(err => res.status(400).json("Error: " + err));
 });
 
+// add a route
 router.route('/add').post((req, res) => {
   const quayname = req.body.quayname;
   const info = req.body.info;
@@ -25,18 +27,21 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json("Error: " + err));
 });
 
+// get a specific route by id
 router.route('/:id').get((req, res) => {
   Quay.findById(req.params.id)
     .then(quay => res.json(quay))
     .catch(err => res.status(400).json("Error: " + err));
 });
 
+// delete a specific route by id
 router.route('/:id').delete((req, res) => {
   Quay.findByIdAndDelete(req.params.id)
     .then(() => res.json("Quay entry deleted"))
     .catch(err => res.status(400).json("Error: " + err));
 });
 
+// update a specific route
 router.route('/update/:id').post((req, res) => {
   Quay.findByIdAndUpdate(req.params.id)
     .then(quay => {
