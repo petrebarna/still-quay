@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/petrebarna/still-quay/issues"
   },
-  "homepage": "https://github.com/petrebarna/still-quay#readme"
+  "homepage": "https://github.com/petrebarna/still-quay#readme",
+  "devDependencies": {
+    "@wdio/cli": "^5.18.4"
+  }
 }
